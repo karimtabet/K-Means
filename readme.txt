@@ -1,4 +1,4 @@
-PROJECT TITLE: Machine Learning Assignment
+PROJECT TITLE: K-Means Clustering
 
 PURPOSE OF PROJECT: Implement k-means clustering on a training data set 
                     to predict classification values of a test data set.
