@@ -31,9 +31,8 @@ public class KMeansClustering
     
     
     /**
-     * Constucts KMeansClustering, populating centroids with first k numbers of data.
-     * 
-     * @param Number of centroids.
+     * Constructs KMeansClustering, populating centroids with first k numbers of data.
+     * @param k Number of centroids
      */
     public KMeansClustering(int k) //k = the number of centroids 
     {
@@ -57,7 +56,15 @@ public class KMeansClustering
      * @param Array of datum and array of centroid.
      * @return Distances for one row of centroid.
      */
-    public double getDistance(double[] datum, double[] centroid) 
+
+    /**
+     * Calculates Euclidean distance between cluster centroid to each object in data[][].
+     * data[i] is the whole row eg: data[0] = {1.0,1.0} (same with centroids[i]).
+     * @param datum Array of datum and array of centroid.
+     * @param centroid Array of centroid
+     * @return
+     */
+    public double getDistance(double[] datum, double[] centroid)
     {
         double d = 0.0;
 
@@ -70,9 +77,8 @@ public class KMeansClustering
 
     /**
      * Gets centroids with the smallest distance for one datum.
-     * 
-     * @param Array of datum.
-     * @return closestCentroid to datum.
+     * @param datum Array of datum.
+     * @return Closest Centroid to datum.
      */
     public int getClosestCentroid(double[] datum)
     {
@@ -92,7 +98,6 @@ public class KMeansClustering
 
     /**
      * Print array of datum to terminal.
-     * 
      * @param Array of datum.
      */
     public void printDatum(double[] datum) 
@@ -108,8 +113,6 @@ public class KMeansClustering
 
     /**
      * Print centroids to terminal.
-     * 
-     * @param Array of datum.
      */
     public void printCentroids() 
     {
@@ -223,8 +226,9 @@ public class KMeansClustering
     /**
      * Prints out classification values for test (unclassified) data in both the terminal window and
      * a new file "output.txt" in the root folder. Throws an input output exception.
-     * 
-     * @param An unclassifiedData array, a centroid array.
+     * @param unclassifiedData An unclassifiedData array.
+     * @param centroid A centroid array.
+     * @throws IOException
      */
     public void printNewClassifications(double[][] unclassifiedData, double[][] centroid) throws IOException {
 
@@ -246,7 +250,7 @@ public class KMeansClustering
      * Main method, asks for number of centroids (k) and creates a KMeansClustering object with k amount of 
      * centroids.
      */
-    public static void main(String args[]) throws IOException 
+    public static void main(String args[]) throws IOException
     {
     	System.out.println("Type number of centroids: ");
     	String userInput = inFromUser.readLine();
