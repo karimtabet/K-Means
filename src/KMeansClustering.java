@@ -98,7 +98,7 @@ public class KMeansClustering
 
     /**
      * Print array of datum to terminal.
-     * @param Array of datum.
+     * @param datum rray of datum.
      */
     public void printDatum(double[] datum) 
     {
