@@ -18,10 +18,10 @@ public class Data
     }
 
     //populate trainingData[][] with values from the training file (data with classifications)
-    public double[][] readTrainingFile()
+    public double[][] readTrainingFile(String filePath)
     {
         try {
-            BufferedReader br = new BufferedReader(new FileReader("classifieddata.txt"));
+            BufferedReader br = new BufferedReader(new FileReader(filePath));
             currentLine = br.readLine(); //start by reading the current line of text from the file
             int row = 0;
 
@@ -51,10 +51,10 @@ public class Data
     }
 
     //populate testData[][] with values from the test file (the data with no classifications)
-    public double[][] readTestFile()
+    public double[][] readTestFile(String filePath)
     {
         try {
-            BufferedReader br = new BufferedReader(new FileReader("unclassifieddata.txt"));
+            BufferedReader br = new BufferedReader(new FileReader(filePath));
             currentLine = br.readLine(); //start by reading the current line of text from the file
             int row = 0;
 

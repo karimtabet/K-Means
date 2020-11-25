@@ -9,11 +9,7 @@
  * @version 1.0 24/11/2010
  */
 
-import java.io.BufferedReader;
-import java.io.FileWriter;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Vector;
 
 public class KMeansClustering 
@@ -40,8 +36,8 @@ public class KMeansClustering
         centroids = new double[k][7]; //6 attributes for each centroid
         n = new int[k];             
         set = new Data();
-        classifiedData = set.readTrainingFile();
-        unclassifiedData = set.readTestFile();
+        classifiedData = set.readTrainingFile("classifieddata.txt");
+        unclassifiedData = set.readTestFile("unclassifieddata.txt");
 
         for (int i = 0; i < k; i++) { //populate centroids with first k no. of data
             for(int j = 0; j < 7; j++) {
